@@ -9,6 +9,9 @@ export default {
             control: { type: 'select' },
             options: ['small', 'medium', 'large'],
         },
+        slot:{
+            control: { type: 'text' },
+        }
     },
 };
 
@@ -22,11 +25,11 @@ const Template = (args: MyComponentProps) => ({
         return { args };
     },
     // And then the `args` are bound to your component with `v-bind="args"`
-    template: '<v-button v-bind="args">Button</v-button>',
+    template: `<v-button v-bind="args">${args.slot}</v-button>`,
 });
 
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({ slot: 'default text'});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 
 Primary({args: {classes: 'btn'}});
