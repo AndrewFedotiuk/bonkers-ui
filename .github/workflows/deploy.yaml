@@ -18,15 +18,8 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn test
       - run: yarn build-storybook
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          token: ${{secrets.TOKEN}}
-          GITHUB_TOKEN: ${{secrets.TOKEN}}
-          branch: gh-pages
-          folder: storybook-static
-          clean: true
-          force: false
-          clean-exclude: |
-            special-file.txt
-            some/*.txt
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./storybook-static
