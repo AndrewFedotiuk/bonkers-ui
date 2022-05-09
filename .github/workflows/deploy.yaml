@@ -17,3 +17,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --frozen-lockfile
       - run: yarn test
+      - run: yarn build-storubook
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: storybook-static
+          folder: build
