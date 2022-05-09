@@ -19,11 +19,12 @@ jobs:
       - run: yarn test
       - run: yarn build-storybook
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
+          token: ${{secrets.TOKEN}}
+          branch: gh-pages
+          folder: storybook-static
           clean: true
           clean-exclude: |
             special-file.txt
             some/*.txt
-          branch: gh-pages
-          folder: storybook-static
