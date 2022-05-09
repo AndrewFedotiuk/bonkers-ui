@@ -18,8 +18,8 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn test
       - run: yarn build-storybook
-      - name: Deploy 🚀
-        - run: yarn deploy
+      # - name: Deploy 🚀
+      - run: yarn deploy
         # uses: JamesIves/github-pages-deploy-action@v4.3.3
         # with:
         #   branch: gh-pages
