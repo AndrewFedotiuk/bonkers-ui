@@ -18,14 +18,13 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn test
       - run: yarn build-storybook
-      # - name: Deploy 🚀
-      - run: yarn deploy
-        # uses: JamesIves/github-pages-deploy-action@v4.3.3
-        # with:
-        #   branch: gh-pages
-        #   folder: storybook-static
-        #   BASE_BRANCH: master
-        #   clean: true
-        #   clean-exclude: |
-        #     special-file.txt
-        #     some/*.txt
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          token: ${{secrets.KEY_FOR_DEPLOY}}
+          branch: gh-pages
+          folder: storybook-static
+          clean: true
+          clean-exclude: |
+            special-file.txt
+            some/*.txt
