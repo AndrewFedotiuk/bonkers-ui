@@ -23,3 +23,8 @@ jobs:
         with:
           branch: gh-pages
           folder: storybook-static
+          BASE_BRANCH: master
+          clean: true
+          clean-exclude: |
+            special-file.txt
+            some/*.txt
