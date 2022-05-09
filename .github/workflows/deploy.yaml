@@ -1,4 +1,6 @@
 name: Deploy
+use_directory_urls: false
+site_url: https://andrewfedotiuk.github.io/bonkers-ui/
 on: 
   pull_request:
   push:
