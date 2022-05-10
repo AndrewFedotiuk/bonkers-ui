@@ -9,6 +9,5 @@ export default defineConfig({
       '@': resolve(__dirname, 'src')
     }
   },
-  base: '/bonkers-ui/',
   plugins: [vue()]
 })
