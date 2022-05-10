@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils'
-import VButton from "./VButton.vue";
+import UiButton from "./ui-button.vue";
 
 
 describe("VButton.test.ts", () => {
     it('renders props.msg when passed', () => {
         const classes = 'message';
-        const wrapper = mount(VButton, {
+        const wrapper = mount(UiButton, {
             props: { classes }
         })
 

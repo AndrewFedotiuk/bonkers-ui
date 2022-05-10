@@ -1,33 +1,37 @@
-import VButton from './VButton.vue';
+import UiButton from './ui-button.vue';
 
 export default {
-    title: 'Components/VButton',
-    component: VButton,
+    title: 'Components/ui-button',
+    component: UiButton,
     // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
     argTypes: {
         classes: {
             control: { type: 'select' },
             options: ['small', 'medium', 'large'],
-            defaultValue: 'medium',
+            description: 'The button size',
         },
         slot: {
             control: { type: 'text' },
-            defaultValue: 'default text',
+            description: 'The slot text or component',
         }
+    },
+    args:{
+        slot: 'default text',
+        classes: 'medium',
     },
 };
 
-type MyComponentProps = InstanceType<typeof VButton>["$props"];
+type MyComponentProps = InstanceType<typeof UiButton>["$props"];
 
 const Template = (args: MyComponentProps) => ({
     // Components used in your story `template` are defined in the `components` object
-    components: { VButton },
+    components: { UiButton },
     // The story's `args` need to be mapped into the template through the `setup()` method
     setup() {
         return { args };
     },
     // And then the `args` are bound to your component with `v-bind="args"`
-    template: `<v-button v-bind="args">${args.slot}</v-button>`,
+    template: `<ui-button v-bind="args">${args.slot}</ui-button>`,
 });
 
 
