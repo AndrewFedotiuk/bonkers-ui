@@ -8,9 +8,11 @@ export default {
         classes: {
             control: { type: 'select' },
             options: ['small', 'medium', 'large'],
+            defaultValue: 'medium',
         },
-        slot:{
+        slot: {
             control: { type: 'text' },
+            defaultValue: 'default text',
         }
     },
 };
@@ -29,7 +31,7 @@ const Template = (args: MyComponentProps) => ({
 });
 
 
-export const Primary = Template.bind({ slot: 'default text'});
+export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 
-Primary({args: {classes: 'btn'}});
+Primary({});

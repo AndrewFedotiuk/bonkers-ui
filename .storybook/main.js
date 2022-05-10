@@ -1,3 +1,5 @@
+const { mergeConfig } = require('vite');
+
 module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
@@ -18,5 +20,11 @@ module.exports = {
   "framework": "@storybook/vue3",
   "core": {
     "builder": "@storybook/builder-vite"
-  }
+  },
+  async viteFinal(config, { configType }) {
+    // return the customized config
+    return mergeConfig(config, {
+      base: "https://andrewfedotiuk.github.io/bonkers-ui/",
+    });
+  },
 }
