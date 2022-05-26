@@ -31,11 +31,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./storybook-static
           cname: https://andrewfedotiuk.github.io/bonkers-ui/
-      - uses: rymndhng/release-on-push-action@master
-        with:
-          tag_prefix: "v"
-          bump_version_scheme: "patch"
-          release_name: "Release <RELEASE_VERSION>"
+      # - uses: rymndhng/release-on-push-action@master
+      #   with:
+      #     tag_prefix: "v"
+      #     bump_version_scheme: "patch"
+      #     release_name: "Release <RELEASE_VERSION>"
       - uses: mikeal/merge-release@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
