@@ -1,11 +1,12 @@
-name: Deploy
+name: Linting
 # site:
 #   use_directory_urls: false
 #   siteUrl: https://andrewfedotiuk.github.io/bonkers-ui/
 #   site_url: https://andrewfedotiuk.github.io/bonkers-ui/
 on: 
-  push:
+  pull_request:
     brunches:
+      - develop
       - master
 jobs:
   lint:
@@ -25,8 +26,3 @@ jobs:
       - run: yarn lint:script
       - run: yarn lint:style
       - run: yarn test
-      - uses: mikeal/merge-release@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.TEST }}
-

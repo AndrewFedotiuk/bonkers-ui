@@ -6,16 +6,13 @@ name: Deploy
 on: 
   push:
     brunches:
-      - master
+      - develop
 jobs:
   lint:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16.x]
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -25,8 +22,10 @@ jobs:
       - run: yarn lint:script
       - run: yarn lint:style
       - run: yarn test
-      - uses: mikeal/merge-release@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.TEST }}
-
+      - run: yarn build-storybook
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./storybook-static
+          cname: https://andrewfedotiuk.github.io/bonkers-ui/
