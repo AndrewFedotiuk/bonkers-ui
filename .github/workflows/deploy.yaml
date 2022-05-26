@@ -33,6 +33,7 @@ jobs:
       - uses: rymndhng/release-on-push-action@master
         with:
           tag_prefix: "v"
+          bump_version_scheme: "patch"
           release_name: "Release <RELEASE_VERSION>"
       - uses: mikeal/merge-release@master
         env:
