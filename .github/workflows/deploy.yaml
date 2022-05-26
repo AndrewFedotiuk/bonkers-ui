@@ -18,23 +18,33 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: yarn install --frozen-lockfile
-      - run: yarn test
-      - run: yarn build-storybook
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./storybook-static
-          cname: https://andrewfedotiuk.github.io/bonkers-ui/
-      - uses: rymndhng/release-on-push-action@master
-        with:
-          tag_prefix: "v"
-          bump_version_scheme: "patch"
-          release_name: "Release <RELEASE_VERSION>"
-      - uses: mikeal/merge-release@master
+      - name: Set up secret file
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: |
+          echo $GITHUB_TOKEN >> GITHUB_TOKEN
+          echo $NPM_AUTH_TOKEN >> NPM_AUTH_TOKEN
+      # - uses: actions/checkout@v3
+      # - uses: actions/setup-node@v3
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+      # - run: yarn install --frozen-lockfile
+      # - run: yarn test
+      # - run: yarn build-storybook
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./storybook-static
+      #     cname: https://andrewfedotiuk.github.io/bonkers-ui/
+      # - uses: rymndhng/release-on-push-action@master
+      #   with:
+      #     tag_prefix: "v"
+      #     bump_version_scheme: "patch"
+      #     release_name: "Release <RELEASE_VERSION>"
+      # - uses: mikeal/merge-release@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
