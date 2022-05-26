@@ -15,7 +15,9 @@
       }
     ],
     "indentation": [
-      "tab"
+      "tab", {
+        "baseIndentLevel": 1
+      }
     ]
   }
 }

@@ -1,4 +1,4 @@
-{
+module.exports = {
     "root": true,
     "env": {
         "browser": true,
@@ -32,6 +32,12 @@
                 "baseIndent": 1,
                 "switchCase": 1,
             }
-        ]
+        ],
+        "eol-last": [
+            "error",
+            "always"
+        ],
+        'no-console': "warn",
+        'no-debugger': "warn"
     }
 }
