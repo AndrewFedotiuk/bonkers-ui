@@ -72,7 +72,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts,vue}": "eslint --fix && typecheck",
-    "*.{css,scss,vue}": "stylelint --fix"
+    "*.{ts,vue}": "eslint --fix && typecheck && test",
+    "*.{css,scss,vue,ts}": "stylelint --fix"
   }
 }

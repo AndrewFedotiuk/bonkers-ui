@@ -1,12 +1,12 @@
-name: Deploy
+name: Deploy beta
 # site:
 #   use_directory_urls: false
 #   siteUrl: https://andrewfedotiuk.github.io/bonkers-ui/
 #   site_url: https://andrewfedotiuk.github.io/bonkers-ui/
-on: 
+on:
   push:
-    brunches:
-      - develop
+    branches:
+      - "develop"
 jobs:
   lint:
     runs-on: ubuntu-latest
