@@ -25,7 +25,7 @@ jobs:
       - run: yarn lint:script
       - run: yarn lint:style
       - run: yarn test
-      - uses: mikeal/merge-release@4.3.0
+      - uses: mikeal/merge-release@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.TEST }}
