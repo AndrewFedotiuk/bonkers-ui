@@ -1,79 +1,80 @@
 {
-  "name": "bonkers-ui",
-  "package-name": "bonkers-ui",
-  "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "lint:script": "eslint --ext .ts,vue,js --ignore-path .gitignore .",
-    "lint:style": "stylelint ./src/**/*.{css,scss,vue}",
-    "lint:markup": "vue-tsc --noEmit",
-    "test": "jest",
-    "deploy": "gh-pages -d storybook-static",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "vue": "^3.2.25"
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "^6.4.22",
-    "@storybook/addon-essentials": "^6.4.22",
-    "@storybook/addon-links": "^6.4.22",
-    "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/builder-vite": "^0.1.33",
-    "@storybook/vue3": "^6.4.22",
-    "@types/jest": "^27.5.0",
-    "@typescript-eslint/eslint-plugin": "^5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
-    "@vitejs/plugin-vue": "^2.3.1",
-    "@vue/eslint-config-typescript": "^10.0.0",
-    "@vue/test-utils": "^2.0.0-rc.18",
-    "@vue/vue3-jest": "^27.0.0",
-    "babel-jest": "27",
-    "eslint": "^8.15.0",
-    "eslint-plugin-vue": "^8.7.1",
-    "gh-pages": "^3.2.3",
-    "husky": "^7.0.4",
-    "jest": "27.3.1",
-    "lint-staged": "^12.4.1",
-    "postcss": "^8.4.13",
-    "postcss-html": "^1.4.1",
-    "storybook-tailwind-dark-mode": "^1.0.12",
-    "stylelint": "^14.8.2",
-    "stylelint-config-recommended": "^7.0.0",
-    "stylelint-config-recommended-vue": "^1.4.0",
-    "stylelint-config-standard": "^25.0.0",
-    "tailwindcss": "^3.0.24",
-    "ts-jest": "^27.0.7",
-    "typescript": "^4.5.4",
-    "vite": "^2.9.7",
-    "vue-loader": "^16.8.3",
-    "vue-tsc": "^0.34.7"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "moduleFileExtensions": [
-      "vue",
-      "js",
-      "jsx",
-      "ts"
-    ],
-    "testEnvironment": "jsdom",
-    "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1"
-    },
-    "transform": {
-      ".*\\.(js)$": "babel-jest",
-      "^.+\\.tsx?$": "ts-jest",
-      ".*\\.(vue)$": "@vue/vue3-jest"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,vue}": "eslint --fix && typecheck && test",
-    "*.{css,scss,vue,ts}": "stylelint --fix"
-  }
+	"name": "bonkers-ui",
+	"package-name": "bonkers-ui",
+	"scripts": {
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook",
+		"lint:script": "eslint --ext .ts,vue,js,json --ignore-path .gitignore .",
+		"lint:style": "stylelint ./src/**/*.{css,scss,vue}",
+		"lint:markup": "vue-tsc --noEmit",
+		"test": "jest",
+		"deploy": "gh-pages -d storybook-static",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"vue": "^3.2.25"
+	},
+	"devDependencies": {
+		"@storybook/addon-actions": "^6.5.9",
+		"@storybook/addon-essentials": "^6.5.9",
+		"@storybook/addon-links": "^6.5.9",
+		"@storybook/addon-postcss": "^2.0.0",
+		"@storybook/builder-vite": "^0.1.36",
+		"@storybook/vue3": "^6.5.9",
+		"@types/jest": "^28.1.3",
+		"@typescript-eslint/eslint-plugin": "^5.29.0",
+		"@typescript-eslint/parser": "^5.29.0",
+		"@vitejs/plugin-vue": "^2.3.3",
+		"@vue/eslint-config-typescript": "^10.0.0",
+		"@vue/test-utils": "^2.0.0-rc.18",
+		"@vue/vue3-jest": "^27.0.0",
+		"babel-jest": "27",
+		"eslint": "^8.18.0",
+		"eslint-plugin-vue": "^9.1.1",
+		"gh-pages": "^4.0.0",
+		"husky": "^8.0.1",
+		"jest": "27.3.1",
+		"lint-staged": "^13.0.2",
+		"postcss": "^8.4.14",
+		"postcss-html": "^1.4.1",
+		"storybook-tailwind-dark-mode": "^1.0.12",
+		"stylelint": "^14.9.1",
+		"stylelint-config-recommended": "^8.0.0",
+		"stylelint-config-recommended-vue": "^1.4.0",
+		"stylelint-config-standard": "^26.0.0",
+		"tailwindcss": "^3.1.4",
+		"ts-jest": "^27.0.7",
+		"typescript": "^4.7.4",
+		"vite": "^2.9.12",
+		"vue-loader": "^16.8.3",
+		"vue-tsc": "^0.34.7"
+	},
+	"jest": {
+		"preset": "ts-jest",
+		"moduleFileExtensions": [
+			"vue",
+			"js",
+			"jsx",
+			"ts"
+		],
+		"testEnvironment": "jsdom",
+		"moduleNameMapper": {
+			"^@/(.*)$": "<rootDir>/src/$1"
+		},
+		"transform": {
+			".*\\.(js)$": "babel-jest",
+			"^.+\\.tsx?$": "ts-jest",
+			".*\\.(vue)$": "@vue/vue3-jest"
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{ts,vue}": "eslint --fix && typecheck && test",
+		"*.{css,scss,vue,ts}": "stylelint --fix"
+	},
+	"license": "MIT"
 }
