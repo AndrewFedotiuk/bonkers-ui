@@ -6,7 +6,7 @@ name: Deploy beta
 on:
   push:
     branches:
-      - "develop"
+      - develop
 jobs:
   lint:
     runs-on: ubuntu-latest

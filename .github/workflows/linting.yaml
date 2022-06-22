@@ -3,9 +3,9 @@ name: Linting
 #   use_directory_urls: false
 #   siteUrl: https://andrewfedotiuk.github.io/bonkers-ui/
 #   site_url: https://andrewfedotiuk.github.io/bonkers-ui/
-on: 
+on:
   pull_request:
-    brunches:
+    branches:
       - develop
       - master
 jobs:
