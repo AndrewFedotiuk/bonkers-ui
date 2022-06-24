@@ -12,5 +12,13 @@
 		--color-primary: #75c46a;
 		--color-secondary: #313449;
 		--color-warning: #f09664;
+
+		/* text */
+		--base-font-size: 1rem;
+		--base-line-height: 1.6;
 	}
+}
+
+body * {
+	line-height: var(--base-line-height);
 }
