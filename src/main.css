@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	:root {
+		--color-white: white;
+		--color-black: black;
+		--color-current: currentcolor;
+		--color-transparent: transparent;
+		--color-error: #e05f5f;
+		--color-primary: #75c46a;
+		--color-secondary: #313449;
+		--color-warning: #f09664;
+	}
+}

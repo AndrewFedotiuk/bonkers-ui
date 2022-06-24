@@ -3,17 +3,17 @@ module.exports = {
 	"env": {
 		"browser": true,
 		"es2021": true,
-		"node": true,
-		"vue/setup-compiler-macros": true
+		"node": true
 	},
 	"extends": [
 		"plugin:vue/vue3-recommended",
 		"eslint:recommended",
-		"@vue/typescript/recommended"
+		"@vue/typescript/recommended",
 	],
 	"parserOptions": {
 		"ecmaVersion": 2021
 	},
+	"parser": "vue-eslint-parser",
 	"plugins": [],
 	"overrides": [
 		{

@@ -6,7 +6,7 @@ describe("VButton.test.ts", () => {
 		const classes = "message";
 		const wrapper = mount(UiButton, {
 			props: { classes }
-		})
+		});
 
 		expect(wrapper.classes()).toContain(classes);
 	})

@@ -1,6 +1,6 @@
 <template>
 	<button
-		class="dark:bg-green-700 dark:hover:bg-green-900 btn bg-green-500 hover:bg-green-300 text-white px-6 py-2 rounded-md"
+		class="btn bg-black text-white hover:bg-white hover:text-black px-6 py-2 rounded-md"
 		:class="classes"
 	>
 		<slot />
