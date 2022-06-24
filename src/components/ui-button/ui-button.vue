@@ -1,18 +1,28 @@
 <template>
 	<button
-		class="dark:bg-green-700 dark:hover:bg-green-900 btn bg-green-500 hover:bg-green-300 text-white px-6 py-2 rounded-md"
-		:class="classes"
+		class="text-base text-white rounded-md"
+		:class="[
+			(!kind || kind === EButtonTypes.PRIMARY) && 'bg-primary',
+			kind === EButtonTypes.SECONDARY && 'bg-secondary',
+			kind === EButtonTypes.WARNING && 'bg-warning',
+			kind === EButtonTypes.ERROR && 'bg-error',
+			(!size || size === EButtonSizes.MEDIUM) && 'py-2.5 px-5',
+			size === EButtonSizes.LARGE && 'py-2.5 px-6',
+			classes
+		]"
 	>
+		{{ kind }}
 		<slot />
 	</button>
 </template>
 
 <script lang="ts" setup>
-	import { defineProps } from "vue"
-	defineProps({
-		classes: {
-			type: String,
-			default: ""
-		}
-	})
+	import { EButtonSizes, EButtonTypes } from "./_typings";
+
+	type TProps = {
+		classes?: string;
+		kind?: EButtonTypes;
+		size?: EButtonSizes
+	}
+	defineProps<TProps>();
 </script>
